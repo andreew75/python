@@ -106,14 +106,14 @@
 # formatted_string = f"Ваша скидка составила: ${discount:.2f}. Итоговая сумма: ${total_amount:.2f}."
 # print(formatted_string)
 
-"""
-так можно оставлять
-длинные комментарии
-и пайтон их игнорирует
-
-"""
-from itertools import count
-from operator import index
+# """
+# так можно оставлять
+# длинные комментарии
+# и пайтон их игнорирует
+#
+# """
+# from itertools import count
+# from operator import index
 
 
 # name = input("Введите строку: ")
@@ -690,15 +690,46 @@ from operator import index
 #
 # print(cockroach_speed(1.08))
 
-import math
+# import math
+#
+#
+# def find_next_square(sq):
+#     if int(math.sqrt(sq)) ** 2 == sq:
+#         return int(math.sqrt(sq) + 1) ** 2
+#     else:
+#         return -1
+#
+#
+# print(find_next_square(121))
+#
+# def switch_it_up(number):
+#     # numbers =
+#     # {1: 'One', 2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five',
+#     # 6: 'Six', 7: 'Seven', 8: 'Eight', 9: 'Nine', 0: 'Zero'}
+#     # for i in numbers:
+#     #     if i == number:
+#     #         return numbers[i]
+#     return ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'][number]
+#
+#
+# print(switch_it_up(6))
+
+# import re
+#
+# s = "Я ищу совпадения в 2025 году. И я их найду в 2 счёта. 6789. [Hel-lo] Wor_ld 2000000000000000000"
+# reg = r"\d+\s\w+"
+#
+# print(re.findall(reg, s))
+
+# def is_triangle(a, b, c):
+#     return a + b > c and b + c > a and c + a > b
+#
+#
+# print(is_triangle(1, 2, 2))
 
 
-def find_next_square(sq):
-    if int(math.sqrt(sq)) ** 2 == sq:
-        return int(math.sqrt(sq) + 1) ** 2
-    else:
-        return -1
+def to_alternating_case(string):
+    return string.swapcase()
 
 
-print(find_next_square(121))
-
+print(to_alternating_case("hello world"))
