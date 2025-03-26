@@ -2262,10 +2262,61 @@
 # МОДУЛИ OS и OS.PATH
 
 # import os
+
 #
 # # os.rmdir('folder')
 # # os.makedirs('1/2/3')
 # # os.remove('two.txt')
 # os.rename('one.txt', 'one_1.txt')
 
+# dirs = [r'Work/F1', r'Work/F2/F21']
 
+# for d in dirs:
+#     os.makedirs(d)
+
+# files = {
+#     'Work': ['w.txt'],
+#     r'Work/F1': ['f11.txt', 'f12.txt', 'f14.txt'],
+#     r'Work/F2/F21': ['f211.txt', 'f212.txt'],
+# }
+
+# for k, v in files.items():
+#     for file in v:
+#         file_path = os.path.join(k, file)
+#         open(file_path, 'w').close()
+
+
+# def print_three(topdown):
+#     print(f"Обход Work {'сверху' if topdown else 'снизу'}")
+#     for root, directory, file in os.walk("Work", topdown):
+#         print(root)
+#         print(directory)
+#         print(file)
+#     print("-" * 50)
+#
+#
+# print_three(False)
+# print_three(True)
+
+import os
+# import time
+#
+# path = "readme.md"
+# size = os.path.getsize(path)
+# print(os.path.getsize(path))
+# print(os.path.getatime(path))
+# print(os.path.getmtime(path))
+# print(os.path.getctime(path))
+#
+# print(time.strftime("%d.%m.%Y, %H:%M:%S"))
+# print(size / 1024)
+
+file_path = r"/Volumes/Work/Python522/text.txt"
+
+if os.path.exists(file_path):
+    directory, file = os.path.split(file_path)
+    a_time = os.path.getatime(file_path)
+    print(f"{file} {directory} {a_time}")
+
+else:
+    print(f"Empty {file_path}")
