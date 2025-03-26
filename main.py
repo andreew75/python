@@ -2261,11 +2261,11 @@
 
 # МОДУЛИ OS и OS.PATH
 
-import os
-
-# os.rmdir('folder')
-# os.makedirs('1/2/3')
-# os.remove('two.txt')
-os.rename('one.txt', 'one_1.txt')
+# import os
+#
+# # os.rmdir('folder')
+# # os.makedirs('1/2/3')
+# # os.remove('two.txt')
+# os.rename('one.txt', 'one_1.txt')
 
 
