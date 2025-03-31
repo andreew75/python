@@ -2298,7 +2298,7 @@
 # print_three(False)
 # print_three(True)
 
-import os
+# import os
 # import time
 #
 # path = "readme.md"
@@ -2311,12 +2311,13 @@ import os
 # print(time.strftime("%d.%m.%Y, %H:%M:%S"))
 # print(size / 1024)
 
-file_path = r"/Volumes/Work/Python522/text.txt"
+# file_path = r"/Volumes/Work/Python522/text.txt"
+#
+# if os.path.exists(file_path):
+#     directory, file = os.path.split(file_path)
+#     a_time = os.path.getatime(file_path)
+#     print(f"{file} {directory} {a_time}")
+#
+# else:
+#     print(f"Empty {file_path}")
 
-if os.path.exists(file_path):
-    directory, file = os.path.split(file_path)
-    a_time = os.path.getatime(file_path)
-    print(f"{file} {directory} {a_time}")
-
-else:
-    print(f"Empty {file_path}")

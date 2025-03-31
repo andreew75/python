@@ -122,10 +122,32 @@ from os.path import split
 #
 # for lang in set(list_0.values()):
 #     print(f"{lang}")
+#
+# list_1 = []
+#
+# for lst in range(10):
+#     new_list = {'red': 12, 'blue': 133}
+#     list_1.append(new_list)
+# print(list_1[:3])
 
-list_1 = []
+# prompt = "If you share your name, we can personalize the messages you see."
+# prompt += "\nWhat is your first name? "
+# name = input(prompt)
+# print(f"\nHello, {name}!")
 
-for lst in range(10):
-    new_list = {'red': 12, 'blue': 133}
-    list_1.append(new_list)
-print(list_1[:3])
+# current_number = 1
+# while current_number <= 5:
+#     print(current_number)
+#     current_number += 1
+
+responses = {}
+polling_active = True
+while polling_active:
+    name = input("\nWhat is your name? ")
+    response = input("Which mountain would you like to climb someday? ")
+    repeat = input("Would you like to let another person respond? (yes/ no) ")
+    if repeat == 'no':
+        polling_active = False
+        print("\n--- Poll Results ---")
+    for name, response in responses.items():
+        print(f"{name} would like to climb {response}.")
