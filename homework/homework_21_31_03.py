@@ -72,4 +72,3 @@ print(car_1.get_brand())
 print()
 car_2 = Cars("Model S", "2024", "Tesla", "670 л.с.", "Red", "12 840 000 руб.")
 car_2.print_info()
-
