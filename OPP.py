@@ -113,23 +113,149 @@
 # p2.add_skill(2)
 
 
-class Person:
-    count = 0
+# class Person:
+#     count = 0
+#
+#     def __init__(self, name, surname):
+#         self.name = name
+#         self.surname = surname
+#         Person.count += 1
+#
+#     def print_info(self):
+#         print('Данные сотрудника: ', self.name, self.surname)
+#
+#
+# p1 = Person("Виктор", "Довгань")
+# p1.print_info()
+#
+# p2 = Person("Виктор", "Довгань")
+# p2.print_info()
+#
+# print(p1.count)
+# print(Person.count)
 
-    def __init__(self, name, surname):
-        self.name = name
-        self.surname = surname
-        Person.count += 1
 
-    def print_info(self):
-        print('Данные сотрудника: ', self.name, self.surname)
+# class Point:
+#
+#     def __init__(self, x, y):
+#         self.__x = x
+#         self.__y = y
+#
+#     def __check_value(x):
+#         return isinstance(x, int) or isinstance(x, float)
+#
+#     def set_coord(self, x, y):
+#         self.__x = x
+#         self.__y = y
+#
+#     def get_coord(self, x, y):
+#         return self.__x, self.__y
+#
+#
+# p1 = Point(5, 10)
+# p1.set_coord(33, 44)
+# p1.z = 200
+#
+# print(p1.__dict__)
+
+# class Point:
+#     __slots__ = ("x", "y")
+#
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#
+# p1 = Point(5, 10)
+# # p1.z = 20
+# print(p1.x, p1.y)
+
+# class Point:
+#
+#     def __init__(self, x, y):
+#         self.__x = x
+#         self.__y = y
+#
+#     @property
+#     def x(self):
+#         return self.__x
+#
+#     @x.setter
+#     def x(self, x):
+#         self.__x = x
+#
+#     @x.deleter
+#     def x(self):
+#         del self.__x
+#
+#
+#
+#
+# p1 = Point(5, 12)
+# p1.coord_x = 100
+# del p1.coord_x
 
 
-p1 = Person("Виктор", "Довгань")
-p1.print_info()
+# class Person:
+#
+#     def __init__(self, name, age):
+#         self.__name = name
+#         self.__age = age
+#
+#     @property
+#     def name(self):
+#         return self.__name
+#
+#     @name.setter
+#     def name(self, name):
+#         self.__name = name
+#
+#     @name.deleter
+#     def name(self):
+#         del self.__name
+#
+#     @property
+#     def age(self):
+#         return self.__age
+#
+#     @age.setter
+#     def age(self, age):
+#         self.__age = age
+#
+#     @age.deleter
+#     def age(self):
+#         del self.__age
+#
+#
+# p1 = Person("Irina", 26)
+# print(p1.__dict__)
+# p1.name = "Ivan"
+# p1.age = 50
+# print(p1.__dict__)
+# print()
+# del p1.name
+# print(p1.__dict__)
 
-p2 = Person("Виктор", "Довгань")
-p2.print_info()
 
-print(p1.count)
-print(Person.count)
+def inc(x):
+    return x + 1
+
+
+def dec(x):
+    return x - 1
+
+
+print(inc(10), dec(5))
+
+
+class Change:
+    @staticmethod
+    def inc(x):
+        return x + 1
+
+    @staticmethod
+    def dec(x):
+        return x - 1
+
+
+print(Change.inc(10), Change.dec(5))
