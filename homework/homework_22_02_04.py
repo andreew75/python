@@ -22,12 +22,12 @@ class Weight:
         else:
             print("Значение должно быть числом! Попробуйте снова")
 
-    @staticmethod
-    def conversion(x):
-        return f"{x * 2.205} фунтов"
+    # @staticmethod
+    # def conversion(x):
+    #     return f"{x * 2.205} фунтов"
+    conversion = (lambda x: f"{x * 2.205} фунтов")
 
 
 w1 = Weight()
 w1.x = 41
 print(Weight.conversion(w1.x))
-
