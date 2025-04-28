@@ -22,7 +22,7 @@ class Shape(ABC):
         pass
 
 
-class Square(Shape, ABC):
+class Square(Shape):
     def __init__(self, a, name, color):
         self.a = a
         self.name = name
@@ -32,7 +32,7 @@ class Square(Shape, ABC):
         return self.a * 4
 
     def square(self):
-        return self.a * 2
+        return self.a * self.a
 
     def draw(self):
         return '\n'.join(['*' * self.a for _ in range(self.a)])
@@ -48,7 +48,7 @@ class Square(Shape, ABC):
         )
 
 
-class Rectangle(Shape, ABC):
+class Rectangle(Shape):
     def __init__(self, a, b, name, color):
         self.a = a
         self.b = b
@@ -76,7 +76,7 @@ class Rectangle(Shape, ABC):
         )
 
 
-class Triangle(Shape, ABC):
+class Triangle(Shape):
     def __init__(self, a, b, c, name, color):
         self.a = a
         self.b = b
