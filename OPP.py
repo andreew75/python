@@ -1,4 +1,8 @@
 # Объектно-ориентированное программирование
+import json
+import pickle
+
+from car.electro_car import ElectroCar
 
 # class Point:
 #     x = 1
@@ -812,34 +816,320 @@
 # p1 = Point(5)
 # print(p1)
 
-from random import choice, randint
+# from random import choice, randint
+#
+#
+# class Cat:
+#     def __init__(self, name, age, pol):
+#         self.name = name
+#         self.age = age
+#         self.pol = pol
+#
+#     def __str__(self):
+#         if self.pol == "M":
+#             return f"{self.name} is good boy!"
+#         elif self.pol == "F":
+#             return f"{self.name} is good girl!"
+#         else:
+#             return f"{self.name} is good Kitty!"
+#
+#     def __repr__(self):
+#         return f"Cat(name='{self.name}', age={self.age}, pol='{self.pol}')"
+#
+#     def __add__(self, other):
+#         if self.pol != other.pol:
+#             return [Cat("No name", 0, choice(["M", "F"])) for _ in range(1, randint(2, 5))]
+#         raise TypeError("Types not supported")
+#
+#
+# cat1 = Cat("Tom", 4, "M")
+# cat2 = Cat("Elsa", 5, "F")
+# print(cat1)
+# print(cat2)
+# print(cat1 + cat2)
+
+# class Numbers:
+#
+#     def __init__(self,value):
+#         self.value = value
+#
+#     def total(self, a):
+#         return self.value + int(a)
+#
+#
+# class Text:
+#
+#     def __init__(self, value):
+#         self.value = value
+#
+#     def total(self, a):
+#         return len(self.value + str(a))
+
+# class Animals:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#
+#
+# class Cat(Animals):
+#     def info(self):
+#         print(f"Я кот. Меня зовут {self.name}. Мой возраст {self.age}")
+#
+#     def make_sound(self):
+#         print(f"{self.name} мяукает.")
+#
+#
+# class Dog(Animals):
+#     def info(self):
+#         print(f"Я собака. Меня зовут {self.name}. Мой возраст {self.age}")
+#
+#     def make_sound(self):
+#         print(f"{self.name} гавкает.")
+#
+#
+# cat = Cat("Пушок", 3)
+# dog = Dog("Мухтар", 6)
+#
+# for animal in cat, dog:
+#     animal.info()
+#     animal.make_sound()
 
 
-class Cat:
-    def __init__(self, name, age, pol):
-        self.name = name
-        self.age = age
-        self.pol = pol
+# def string_strip(chars):
+#     def wrap(string):
+#         if not isinstance(string, str):
+#             raise ValueError("")
+#
+#         return string.strip(chars)
+#     return wrap
+#
+#
+# s1 = string_strip("&#?.! ")
+# print(s1("    Hello!    "))
+#
+#
+# class StringStrip:
+#     def __init__(self, chars):
+#         self.chars = chars
+#
+#     def __call__(self, *args, **kwargs):
+#         if not isinstance(args[0], str):
+#             raise ValueError("")
+#
+#         return args[0].strip(self.chars)
+#
+#
+# s2 = string_strip("&#?.! ")
+# print(s1("    Hello!    "))
 
-    def __str__(self):
-        if self.pol == "M":
-            return f"{self.name} is good boy!"
-        elif self.pol == "F":
-            return f"{self.name} is good girl!"
-        else:
-            return f"{self.name} is good Kitty!"
+# class MyDecorator:
+#     def __init__(self, fn):
+#         self.func = fn
+#
+#     def __call__(self, *args):
+#         print("До вызова")
+#         print(self.func(*args))
+#         print("После вызова")
+#
+#
+# @MyDecorator
+# def func(a, b):
+#     return a * b
+#
+#
+# func(2, 5)
 
-    def __repr__(self):
-        return f"Cat(name='{self.name}', age={self.age}, pol='{self.pol}')"
+# from car.electro_car import ElectroCar
+#
+# if __name__ == '__main__':
+#     e_car = ElectroCar("Tesla", "T", 2018, 99000, 100)
+#     e_car.show_car()
+#     e_car.description_power()
+#
 
-    def __add__(self, other):
-        if self.pol != other.pol:
-            return [Cat("No name", 0, choice(["M", "F"])) for _ in range(1, randint(2, 5))]
-        raise TypeError("Types not supported")
+# +++++++++++++++
+
+# Упаковка данных (Сериализация) и распаковка данных (Десериализация)
+
+# dump() - Сохраняет данные в открытый файл
+# load() - Считывает данные из открытого файла
+# dumps() - сохраняет данные в строку
+# loads( ) - считывает данные из строки
+
+# import pickle
+#
+# filename = "basket.txt"
+#
+# shop = {
+#     "fruits": ["apple", "orange"],
+#     "veget": ("tomato", "redis"),
+#     "1000": 1000
+# }
+#
+# with open(filename, "wb") as fn:
+#     pickle.dump(shop, fn)
+#
+# with open(filename, "rb") as fn:
+#     shop_list = pickle.load(fn)
+#
+# print(shop_list)
+
+#
+# class Test:
+#     num = 25
+#     string = "Privet"
+#     lst = [1, 2, 3]
+#     dictionary = {"first": 1, "second": 2}
+#
+#     def __str__(self):
+#         return f"Число: {Test.num}\nСтрока: {Test.string}\n "
+#
+#
+# obj = Test()
+# print(obj)
+#
+# obj1 = pickle.dumps(obj)
+# print(obj1)
+#
+# obj2 = pickle.loads(obj1)
+# print(obj2)
 
 
-cat1 = Cat("Tom", 4, "M")
-cat2 = Cat("Elsa", 5, "F")
-print(cat1)
-print(cat2)
-print(cat1 + cat2)
+# import json
+# from random import choice
+#
+#
+# def gen_person():
+#     name = ''
+#     tel = ''
+#
+#     letters = ['a', 'b', 'd', 'e', 'f', 'p']
+#     num = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+#
+#     while len(name) != 6:
+#         name += choice(letters)
+#
+#     while len(tel) < 7:
+#         tel += choice(num)
+#
+#     person = {
+#         'name': name,
+#         'tel': tel,
+#     }
+#
+#     return person
+#
+#
+# print(gen_person())
+
+# data = {
+#     'name': 'Olga',
+#     'age': 35,
+#     20: None,
+#     True: False,
+#     'hobbies': ('run', 'sing')
+# }
+#
+# with open('data_file.json', 'w') as fw:
+#     json.dump(data, fw, indent=4)
+#
+#
+# class Student:
+#     def __init__(self, name, marks):
+#         self.name = name
+#         self.marks = marks
+#
+#     def __str__(self):
+#         st = ", ".join(map(str, self.marks))
+#         return f"Student {self.name}: {st}"
+#
+#     def add_marks(self, mark):
+#         self.marks.append(mark)
+#
+#     def delete_mark(self, index):
+#         self.marks.pop(index)
+#
+#     def edit_marks(self, index, new_mark):
+#         self.marks[index] = new_mark
+#
+#     def average_mark(self):
+#         return sum(self.marks) / len(self.marks)
+#
+#     def _dump_to_json(self):
+#         data = {"name:": self.name, "marks:": self.marks}
+#         with open(self.get_file_name(), "w") as f:
+#             json.dump(data, f)
+#
+#     def get_file_name(self):
+#         return self.name + ".json"
+#
+#
+# st1 = Student("Anton", [5, 3, 5, 4])
+# st2 = Student("Egor", [2, 3, 5, 3])
+# st3 = Student("Misha", [4, 5, 3, 4])
+#
+#
+# # print(st1)
+# # st1.add_marks(2)
+# # print(st1)
+# # st1.delete_mark(1)
+# # print(st1)
+# # st1.edit_marks(3, 5)
+# # print(st1)
+#
+#
+# class Group:
+#     def __init__(self, students, group):
+#         self.students = students
+#         self.group = group
+#
+#     def __str__(self):
+#         st = "\n".join(map(str, self.students))
+#         return f"Group: {self.group}\n{st}"
+#
+#     def _get_file_name(self):
+#         return self.group.lower().replace(" ", "_") + ".json"
+#
+#     def dump_to_json(self):
+#         date = [{'name': student.name, 'marks': student.marks} for student in self.students]
+#         with open(self._get_file_name(), "w") as f:
+#             json.dump(date, f, indent=2)
+#
+#
+# sts1 = [st1, st2]
+# gr1 = Group(sts1, "Python")
+# print(gr1)
+# gr1.dump_to_json()
+
+
+import requests
+import json
+
+
+response = requests.get("https://jsonplaceholder.typicode.com/todos")
+todos = json.loads(response.text)
+# print(todos)
+
+todos_by_user = {}
+
+for todo in todos:
+    if todo['completed']:
+        try:
+            todos_by_user[todo["userId"]] += 1
+        except KeyError:
+            todos_by_user[todo["userId"]] = 1
+
+# print(todos_by_user)
+
+top_user = sorted(todos_by_user.items(), key=lambda x: x[1], reverse=True)[0]
+print(top_user)
+
+users = []
+for user, num_complete in top_user:
+    if num_complete < top_user:
+        break
+    users.append(user)
+
+
+print(users)
+
