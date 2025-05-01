@@ -66,7 +66,7 @@ class Countries:
 
     @staticmethod
     def delete_data():
-        country = input("Введите страну для удаления: ").strip().capitalize()
+        country = input("Введите страну для удаления: ").strip().lower()
         if country in Countries.regions:
             del Countries.regions[country]
             Countries.save_data()
@@ -123,9 +123,12 @@ class Countries:
 
     @staticmethod
     def view_data():
-        with open(Countries.filename, 'r') as f:
-            Countries.regions = json.load(f)
-            print(Countries.regions)
+        if not Countries.regions:
+            print("Список стран пуст или данные не загружены.")
+            return
+
+        print("Текущие данные:")
+        print(json.dumps(Countries.regions, indent=2, ensure_ascii=False))
 
 
 if __name__ == "__main__":
