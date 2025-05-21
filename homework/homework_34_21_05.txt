@@ -1,0 +1,128 @@
+
+
+
+2. Определить все товары, которые производятся в Беларуси (марка, код товара. страна)
+
+select ID, REM, Country
+from Ware
+where Country is 'Беларусь'
+
+3. Удалите из таблицы все товары, которые произведены в Германии.
+
+delete from Ware
+where Country is 'Германия'
+
+4. Замените страну-производителя Польшу на Россию (код, товар, страна, описание товара).
+
+update Ware
+set Country = 'Россия'
+where Country is 'Польша'
+
+5. Восстановите строки, удаленные в 3 пункте.
+
+insert into Ware
+values
+(1049, 'KCB-03BKP', 'кожзам', 'ч', '40x30x8,5', 'Гepмания', 2001, 325, 14, 'System Case(15")'),
+(1001, 'CKN-002', 'кожзам', 'ч', '39x30x6,4', 'Гepмания', 2001, 143, 2, 'Notebrie（13.2'),
+(1036, 'CN01', 'полиастек.', 'ч', '39x30x5', 'Гepмания', 2011, 435, 32, 'Computer Case(15/15,4")'),
+(1017, 'PON-303ĐK', 'полиастер', 'ч', '40x30x8,5', 'Гepмания', 2001, 10, 29, 'Large Expandable computer brief （17）');
+
+6. Выведите весь товар, который не черного цвета (продукт, цену, код продукта)
+
+select Produce, Price, ID
+from Ware
+where Color is not 'ч'
+
+
+7. Вставьте строку  NTC-117BK Micro Camera Case, нейлон, ч, 13,3x8,3x5,7, 2016, Беларусь, 1046
+
+insert into Ware
+values
+(1046, 'NTC-117BK', 'нейлон', 'ч', '13,3x8,3x5,7', 'Беларусь', 2016, NULL, NULL, 'Micro Camera Case')
+
+
+8. Вставьте строку POC-463BK	Compact Camera Case, полиэстер, ч, 11x7x4,5, остальные данные не определены.
+
+в ID NOT NULL
+
+insert into Ware (ID, Produce, Material, Color, Size, Country, ID_salespeople, Price, Count, REM)
+values
+(1167, 'POC-463BK', 'полиэстер', 'ч', '11x7x4,5', NULL, NULL, NULL, NULL, 'Compact Camera Case')
+
+
+9. Вывести весь товар, который поставляет продавец с кодом 2065 из России
+
+select Produce, REM
+from Ware
+where ID_salespeople is 2065 and Country is 'Россия'
+
+10. Вывести товар, цена за который находится в диапазоне от 200 до 345
+
+select Price, REM
+from Ware
+where Price between 200 and 345
+
+11. Определите все сумки из кожи с размером не менее 40х30х5
+
+Здесь я не понял, как именно требуется определить размер. Если по прицнипу числового сравнения, то в таблице размер - это строка и значит нужно перобразовать строку в числа, поэтому я запрос написал, но он явно не правильный)
+
+select REM
+from Ware
+where REM glob '*Case*' and Material = 'кожа' and Size Glob '4[0-9]*x3[0-9]*x5*'
+
+
+13. Написать запрос, который заменит код поставщика на 2000, если на складе хранится товара менее чем на 500 руб. По данному поставщику.
+
+update Ware
+set ID_salespeople = 2000
+where Price * Count < 500
+
+14. Вывести все кожаные сумки, количество которых менее 5 шт. и общая сумма товара не превышает 450 руб. 
+
+select REM
+from Ware
+where (REM glob '*Case*' and Material = 'кожа') and Count < 5 and Price * Count <= 450;
+
+15. Напишите запрос, который выведет все нейлоновые сумки цена на которые не превышает 250 руб.
+
+select REM
+from Ware
+where (REM glob '*Case*' and Material = 'нейлон') and Price <= 250;
+
+
+16. Замените материал нейлон на брезент, если сумка стоит менее 200 руб. 
+
+update Ware
+set Material = 'брезент'
+where (Material is 'нейлон' and REM glob '*Case*') and Price < 200;
+
+17. Напишите запрос, который выводит все сумки, у которых есть косметички
+
+select REM
+from Ware
+where REM glob '*Case*косметичка*'
+
+18. Напишите запрос, который покажет все кожаные сумки черного цвета китайского производства.
+
+select REM
+from Ware
+where REM glob '*Case*' and Color is 'ч' and Country is 'Китай';
+
+20. Напишите запрос, который покажет всех поставщиков сумок не черного цвета.
+
+select ID_salespeople
+from Ware
+where REM glob '*Case*' and Color is not 'ч'
+
+21. Замените материал полиэстер у сумок китайского производства на нейлон
+
+update Ware
+set Material = 'нейлон'
+where Material is 'полиэстер' and Country is 'Китай';
+
+22. В записях с кодом товара: 1015, 1041, 1032, 1010 материал нейлон заменить на полиэстер если страна-производитель Китай.
+
+update Ware
+set Material = 'полиэстер'
+where ID in (1015, 1041, 1032, 1010) and Material is 'нейлон' and Country is 'Китай';
+
