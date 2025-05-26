@@ -42,7 +42,7 @@ class Countries:
     @staticmethod
     def save_data():
         with open(Countries.filename, 'w') as f:
-            json.dump(Countries.regions, f, indent=2)
+            json.dump(Countries.regions, f, indent=2, ensure_ascii=False)
 
     @staticmethod
     def add_data():
