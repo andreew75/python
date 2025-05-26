@@ -25,8 +25,7 @@
 #
 # guest.clear()
 # print(guest)
-
-
+from OPP import users
 # guests = ['Anton', 'Robert', 'Ivan', 'Petr']
 # for guest in guests:
 #     print(f"Hi, {guest}!")
@@ -465,29 +464,717 @@
 # with open("result.txt", "w") as f:
 #     f.write(str(sum(result)))
 
-
-import re
-
-# Корректные строки
-file = ["Много солнца\n", "Много воды\n", "Воды нет\n", "Солнце светит!\n", "Ночь длинная\n", "\n"]
-
-with open("text_words.txt", "w") as f:
-    f.writelines(file)
-
-# Читаем и считаем слова
-word_count = {}
-
-with open("text_words.txt", "r") as f:
-    for line in f:
-        words = re.findall(r'\b\w+\b', line.lower())  # Приводим к нижнему регистру
-        for word in words:
-            word_count[word] = word_count.get(word, 0) + 1
-
-# Сохраняем результат
-with open("word_count.txt", "w") as f:
-    for word, count in word_count.items():
-        f.write(f"{word}: {count}\n")
-
-
+#
+# import re
+#
+# # Корректные строки
+# file = ["Много солнца\n", "Много воды\n", "Воды нет\n", "Солнце светит!\n", "Ночь длинная\n", "\n"]
+#
+# with open("text_words.txt", "w") as f:
+#     f.writelines(file)
+#
+# # Читаем и считаем слова
+# word_count = {}
+#
+# with open("text_words.txt", "r") as f:
+#     for line in f:
+#         words = re.findall(r'\b\w+\b', line.lower())  # Приводим к нижнему регистру
+#         for word in words:
+#             word_count[word] = word_count.get(word, 0) + 1
+#
+# # Сохраняем результат
+# with open("word_count.txt", "w") as f:
+#     for word, count in word_count.items():
+#         f.write(f"{word}: {count}\n")
 
 
+# def show_kwargs(**kwargs):
+#     print(kwargs)
+#
+#
+# show_kwargs(name="Андрей", age=25, gentre="male")
+#
+#
+# def example(*args, **kwargs):
+#     print("ARGS:", args)
+#     print("KWARGS:", kwargs)
+#
+#
+# example(1, 2, name="Alex", active=True)
+
+
+# # Задача 1
+# def sum_all(*args):
+#     return sum(args)
+#
+#
+# print(sum_all(1, 2, 3))
+# print(sum_all(10, -5, 4, 11))
+
+
+# # Задача 2
+# def describe_person(**kwargs):
+#     print(f"name: {kwargs['name']}\nage: {kwargs['age']}\ncity: {kwargs['city']}")
+
+
+# вариант 2
+
+# def describe_person(**kwargs):
+#     for key, value in kwargs.items():
+#         print(f"{key}: {value}")
+#
+#
+# describe_person(name="Анна", age=30, city="Москва")
+
+
+# def custom_print(*args, **kwargs):
+#     print(*args, **kwargs)
+#
+#
+# custom_print(1, 2, 3, sep=' - ', end='!')
+
+
+# def avg(*args):
+#     if not args:
+#         return None
+#     return sum(args) / len(args)
+#
+#
+# print(avg(20, 30, 40))
+# print(avg(10, 20, 30, 40))
+# print(avg(10, 20, 30, 40, 50))
+# print(avg())
+
+
+# def show_profile(*hobbies, **info):
+#     for key, value in info.items():
+#         print(f"{key}: {value}")
+#
+#     if hobbies:
+#         print("Хобби:", ", ".join(hobbies))
+#
+#
+# show_profile('чтение', 'плавание', name='Андрей', age=25, city='Тверь')
+
+
+# def filter_settings(**kwargs):
+#     result = filter(lambda x: x[1], kwargs.items())
+#     print(dict(result))
+
+
+# def filter_settings(**kwargs):
+#     return {k: v for k, v in kwargs.items() if v}
+#
+#
+# print(filter_settings(dark_mode=True, autosave=False, sync=True, beta=False))
+
+
+# def build_query(table_name, *fields, **filters):
+#     lines = []
+#
+#     if fields:
+#         lines.append(f"Выбираем: {', '.join(fields)}")
+#
+#     lines.append(f"Из категории: {table_name}")
+#
+#     if filters:
+#         filter_parts = [f"{k}='{v}'" for k, v in filters.items()]
+#         lines.append("Фильтры: " + " и ".join(filter_parts))
+#
+#     return "\n".join(lines)
+#
+#
+# print(build_query("users", "name", "age",  city='Moscow', active=True))
+
+
+# def log_action(*args, **kwargs):
+#     lines = []
+#     if args:
+#         action = ", ".join(args)
+#         lines.append(f"Действие: {action}")
+#     if kwargs:
+#         details = [f"{k}='{v}'" for k, v in kwargs.items()]
+#         lines.append("Детали: " + " и ".join(details))
+#     return "\n".join(lines)
+#
+#
+# print(log_action("вход", "поиск", пользователь="Андрей", время="22:00"))
+
+
+# def check_sign(num):
+#     return "Положительное" if num > 0 else ("Отрицательное" if num < 0 else "Ноль")
+#
+#
+# print(check_sign(0))
+
+
+# def max_of_two(a, b):
+#     return "Первое больше" if a > b else ("Второе больше" if a < b else "Равны")
+#
+#
+# print(max_of_two(3, 2))
+
+
+# def even_or_odd_list(*args):
+#     return ["Четное" if arg % 2 == 0 else "Нечетное" for arg in args]
+#
+#
+# print(even_or_odd_list(1, 2, 3, 4, 5, 6, 7, 8, 9, 10))
+
+# def greet(name, is_morning=True):
+#     return f"Доброе утро, {name}!" if is_morning else f"Добрый вечер, {name}!"
+#
+#
+# print(greet("Андрей"))
+# print(greet("Мария", is_morning=False))
+
+# def user_summary(*hobbies, **info):
+#     user = []
+#
+#     name = info.get("name")
+#     if name:
+#         user.append(f"Имя: {name}")
+#
+#     age = info.get("age")
+#     if age:
+#         user.append(f"Возраст: {age}")
+#
+#     if hobbies:
+#         hobbie = ", ".join(hobbies)
+#         user.append(f"Хобби: {hobbie}")
+#
+#     return "\n".join(user)
+#
+#
+# print(user_summary("программирование", "гитара", name="Андрей", age=25))
+
+#
+# def get_number():
+#     while True:
+#         try:
+#             num = int(input("Введите число: "))
+#             return num
+#         except ValueError:
+#             print("Вы ввели не число")
+#
+#
+# get_number()
+
+
+# list_1 = [1, 2, 3, 4, 5]
+# result = [x + 10 for x in list_1]
+# print(result)
+
+
+# person = ("Андрей", 25, "Тверь")
+# name, age, city = person
+# print(f"Имя: {name}\nВозраст: {age}\nГород: {city}")
+
+
+# line = [1, 2, 2, 3, 3, 3]
+# result = set(line)
+# print(result)
+
+#
+# dic = {
+#     "Имя": "Андрей",
+#     "Возраст": 25,
+#     "Город": "Тверь"
+# }
+#
+# dic.update({"Профессия": "Программист"})
+# dic.pop("Возраст")
+# dic.update({"Город": "Москва"})
+# print(dic)
+
+# def create_profile(name, age, city, *hobbies):
+#     profile = {
+#         "Имя": name,
+#         "Возраст": age,
+#         "Город": city,
+#         "Хобби": set(hobbies)
+#     }
+#     if age < 0:
+#         del profile["Возраст"]
+#
+#     return profile, len(set(hobbies))
+#
+#
+# print(create_profile("Андрей", 25, "Тверь", "гитара", "чтение", "гитара"))
+
+
+# def create_book_record(title, author, year, *genres):
+#     book_record = {
+#         "название": title,
+#         "автор": author,
+#         "год": year,
+#         "жанры": set(genres)
+#     }
+#     if year < 1900:
+#         book_record.pop("год")
+#
+#     return book_record, len(set(genres))
+#
+#
+# print(create_book_record("Преступление и наказание", "Достоевский",1866,
+#     "роман", "драма", "роман"))
+
+
+# def safe_divide():
+#     while True:
+#         try:
+#             x = int(input("Введите первое число: "))
+#             y = int(input("Введите второе число: "))
+#             return x / y
+#         except ValueError:
+#             print("Ошибка. Нужно вводить числа")
+#         except ZeroDivisionError:
+#             print("Ошибка. Нельзя делить на ноль")
+#         except Exception as e:
+#             print("Ошибка", e)
+#
+#
+# print(safe_divide())
+
+# def input_and_log():
+#     while True:
+#         try:
+#             num = int(input("Введите число: "))
+#         except ValueError:
+#             print("Ошибка ввода")
+#         else:
+#             print("Число введено успешно: ", num)
+#             break
+#         finally:
+#             print("Завершено")
+#
+#
+# input_and_log()
+
+# def validate_age():
+#     try:
+#         age = int(input("Введите свой возраст: "))
+#         if age < 0:
+#             raise ValueError("Возраст не может быть отрицательным числом")
+#         print(f"Возраст принят: {age}")
+#     except ValueError as e:
+#         print("Ошибка:", e)
+#     finally:
+#         print("Завершено.")
+#
+#
+# validate_age()
+
+# if __name__ == "__main__":
+#
+#     def validate_login():
+#         while True:
+#             try:
+#                 login = input("Введите логин: ")
+#                 if len(login) < 5:
+#                     raise ValueError("Логин слишком короткий")
+#                 if not login.isalnum():
+#                     raise ValueError("Логин должен содержать только буквы и цифры")
+#             except ValueError as e:
+#                 print("Ошибка ввода", e)
+#                 continue
+#             else:
+#                 print(f"Возраст принят: {login}")
+#                 break
+#             finally:
+#                 print("Проверка завершена")
+#
+#
+#     validate_login()
+
+# def validate_password():
+#     while True:
+#         try:
+#             password = input("Введите пароль: ")
+#             if len(password) < 8:
+#                 raise ValueError("Пароль слишком короткий")
+#             if " " in password:
+#                 raise ValueError("Пароль не должен содержать пробелы")
+#             if not any(char.isdigit() for char in password):
+#                 raise ValueError("Пароль должен содержать хотя бы одну цифру")
+#             if not any(letter.isupper() for letter in password):
+#                 raise ValueError("Пароль должен содержать заглавную букву")
+#         except ValueError as e:
+#             print("Ошибка ввода", e)
+#             continue
+#         else:
+#             print("Пароль принят")
+#             break
+#         finally:
+#             print("Проверка завершена")
+#
+#
+# validate_password()
+
+# import random as rnd
+#
+# print(rnd.randint(1, 10))
+
+# from my_utils import is_prime, digit_sum, reverse_number, is_palindrome, word_count, shorten
+#
+#
+# def analyze_input(data):
+#     try:
+#         if isinstance(data, int):
+#             return {
+#                 "число": data,
+#                 "простое": is_prime(data),
+#                 "сумма_цифр": digit_sum(data),
+#                 "обратное": reverse_number(data)
+#             }
+#
+#         if isinstance(data, str):
+#             return {
+#                 "строка": data,
+#                 "палиндром": is_palindrome(data),
+#                 "слов": word_count(data),
+#                 "сокращено": shorten(data, 10)
+#             }
+#
+#         else:
+#             raise TypeError("Неверный тип данных.")
+#
+#     except TypeError as e:
+#         print("Ошибка.", e)
+#         return None
+#     finally:
+#         print("Анализ завершен!")
+#
+#
+# print(analyze_input(12345))
+
+from io_utils import save_to_file, append_to_file, read_file
+
+# def notebook():
+#     while True:
+#         try:
+#             choice_user = int(input("""
+# Выберите действие:
+#     1 - Создать заметку
+#     2 - Добавить к заметке
+#     3 - Прочитать заметку
+#     4 - Выход
+#     Ввод: """))
+#         except ValueError:
+#             print("Ошибка. Введите число.")
+#             continue
+#
+#         else:
+#             if choice_user == 1:
+#                 filename = input("Введите название заметки: ")
+#                 data = input("Введите текст заметки: ")
+#                 save_to_file(filename, data)
+#                 print("Заметка сохранена!")
+#
+#             elif choice_user == 2:
+#                 filename = input("Введите название заметки: ")
+#                 data = input("Введите текст заметки: ")
+#                 append_to_file(filename, data)
+#                 print("Заметка сохранена!")
+#
+#             elif choice_user == 3:
+#                 filename = input("Введите название заметки: ")
+#                 print("Содержимое файла: ")
+#                 print(read_file(filename))
+#
+#             elif choice_user == 4:
+#                 print("Программа завершена!")
+#                 break
+#
+#             else:
+#                 print("Выберите действие от 1 до 4.")
+#
+#
+# notebook()
+# save_to_file("test.txt", "Hello world!")
+# append_to_file("test.txt", "Hello again!")
+# print(read_file("test.txt"))
+
+
+# def merge_notes(file1, file2, result_file):
+#
+#     with open(file1, "w") as f1:
+#         f1.write("Содержимое note1...")
+#
+#     with open(file2, "w") as f2:
+#         f2.write("Содержимое note2...")
+#     try:
+#         with open(file1, "r") as f1, open(file2, "r") as f2:
+#             result = f1.read() + "\n---\n" + f2.read()
+#
+#         with open(result_file, "w+") as f3:
+#             f3.write(result)
+#     except FileNotFoundError:
+#         print("Файл не существует.")
+#         return ""
+#
+#     return result, len(result)
+#
+#
+# print(merge_notes("file1.txt", "file2.txt", "result.txt"))
+
+
+# Методы строк и словарей
+
+# def analyze_text(text):
+#     text = text.strip()
+#     return {
+#         "Длина": len(text),
+#         "Заглавных букв": sum(1 for t in text if t.isupper()),
+#         "Цифр": sum(1 for t in text if t.isdigit()),
+#         "Слова": len(text.split())
+#     }
+#
+#
+# print(analyze_text("  Привет, Андрей! 123 Год 2025  "))
+
+# def update_scores(scores, name, new_score):
+#
+#     if name in scores.keys():
+#         scores[name] += new_score
+#     else:
+#         scores[name] = new_score
+#     return scores
+#
+#
+# print(update_scores({"Андрей": 10, "Мария": 15}, "Андрей", 20))
+
+# def get_top_player(scores):
+#     return max(scores.items(), key=lambda x: x[1])
+#
+#
+# print(get_top_player({
+#     "Андрей": 10,
+#     "Мария": 25,
+#     "Олег": 17
+# }))
+
+# import re
+#
+#
+# def word_stats(text):
+#     text = text.lower().strip()
+#     text = re.split(r'[-,.! ]+', text)
+#     res = {}
+#     for word in text:
+#         res[word] = res.get(word, 0) + 1
+#     return res
+#
+#
+# print(word_stats("Привет, Андрей! Привет-привет тебе Андрей."))
+
+# import json
+#
+# with open("users.txt", "w") as f:
+#     f.writelines("Андрей,25,Тверь\nМария,30,Москва")
+#
+#
+# def load_users(filename):
+#     users = []
+#
+#     with open(filename, "r") as f:
+#         for line in f:
+#             user_data = line.strip().split(",")
+#             user = {
+#                 "name": user_data[0],
+#                 "age": int(user_data[1]),
+#                 "city": user_data[2]
+#             }
+#             users.append(user)
+#     return users
+#
+#
+# def add_user(filename, name, age, city):
+#     with open(filename, "a") as f:
+#         f.write(f"{name},{age},{city}\n")
+#
+#
+# def find_user(filename, name):
+#     with open(filename, "r") as f:
+#         for line in f:
+#             user_data = line.strip().split(",")
+#             if user_data[0] == name:
+#                 return {
+#                     "name": user_data[0],
+#                     "age": int(user_data[1]),
+#                     "city": user_data[2]
+#                 }
+#     return None
+#
+#
+# def save_users_json(filename, users):
+#     with open(filename, "w") as f:
+#         json.dump(users, f, ensure_ascii=False, indent=2)
+#
+#
+# def load_users_json(filename):
+#     try:
+#         with open(filename, "r") as f:
+#             return json.load(f)
+#     except FileNotFoundError:
+#         print("Файл не существует.")
+#         return []
+#
+#
+# def save_users_txt(filename, users):
+#     with open(filename, "w") as f:
+#         for user in users:
+#             line = f"{user['name']},{user['age']},{user['city']}\n"
+#             f.write(line)
+#
+#
+# def delete_user(filename, name):
+#     users = load_users(filename)  # Загружаем всех пользователей
+#     updated_users = [u for u in users if u["name"] != name]  # Удаляем по имени
+#
+#     if len(users) == len(updated_users):
+#         print("Пользователь не найден.")
+#         return
+#
+#     save_users_txt(filename, updated_users)  # Сохраняем обратно
+#     print(f"Пользователь {name} удалён.")
+#
+#
+# def user_manager():
+#     while True:
+#         try:
+#             choice_user = int(input("""
+# Выберите действие:
+# 1 – Показать всех пользователей
+# 2 – Добавить пользователя
+# 3 – Найти пользователя
+# 4 - Сохранить всех пользователей в JSON
+# 5 - Загрузить пользователей из JSON
+# 6 - Сохранить пользователей в TXT и JSON
+# 7 - Удалить пользователя
+# 8 – Выход
+# Ввод: """))
+#             filename = "users.txt"
+#             if not 1 <= choice_user <= 8:
+#                 print("Ошибка. Введите число от 1 до 8")
+#         except ValueError:
+#             print("Введите число от 1 до 8.")
+#         else:
+#             if choice_user == 1:
+#                 users = load_users("users.txt")
+#                 print(users)
+#             elif choice_user == 2:
+#                 name = input("Введите имя: ")
+#                 age = int(input("Введите возраст: "))
+#                 city = input("Введите город: ")
+#                 add_user(filename, name, age, city)
+#                 print("Пользователь добавлен!")
+#             elif choice_user == 3:
+#                 name = input("Введите имя: ")
+#                 result = find_user("users.txt", name)
+#                 if result:
+#                     print("Найден:", result)
+#                 else:
+#                     print("Пользователь не найден.")
+#             elif choice_user == 4:
+#                 users = load_users("users.txt")
+#                 save_users_json("users.json", users)
+#                 print("Пользователи сохранены в users.json")
+#             elif choice_user == 5:
+#                 users = load_users_json("users.json")
+#                 if users:
+#                     print("Пользователи из JSON:")
+#                     for user in users:
+#                         print(f"{user['name']} — {user['age']} лет, {user['city']}")
+#                 else:
+#                     print("JSON-файл пуст или не найден.")
+#             elif choice_user == 6:
+#                 users = load_users("users.txt")
+#                 save_users_txt("users.txt", users)
+#                 save_users_json("users.json", users)
+#                 print("Пользователи сохранены в TXT и JSON.")
+#             elif choice_user == 7:
+#                 name = input("Введите имя пользователя для удаления: ")
+#                 delete_user("users.txt", name)
+#             elif choice_user == 8:
+#                 break
+#
+#
+# user_manager()
+
+import json
+
+
+class User:
+    def __init__(self, name, age, city):
+        self.name = name
+        self.age = age
+        self.city = city
+
+    def show_info(self):
+        return f"{self.name} - {self.age} лет, город {self.city}"
+
+    def to_dict(self):
+        return {"name": self.name, "age": self.age, "city": self.city}
+#
+#
+# user = User("Андрей", 25, "Тверь")
+# print(user.show_info())
+
+
+class UserManager:
+    def __init__(self):
+        self.users = []
+
+    def add_user(self, user):
+        self.users.append(user)
+
+    def show_all_users(self):
+        for user in self.users:
+            print(user.show_info())
+
+    def find_user(self, name):
+        for user in self.users:
+            if user.name == name:
+                return user
+        return None
+
+    def remove_user(self, name):
+        for user in self.users:
+            if user.name == name:
+                self.users.remove(user)
+                return True
+        return False
+
+    def update_user(self, name, new_age=None, new_city=None):
+        for user in self.users:
+            if user.name == name:
+                if new_age is not None:
+                    user.age = new_age
+                if new_city is not None:
+                    user.city = new_city
+
+    def save_to_json(self, filename):
+        users = [user.to_dict() for user in self.users]
+        with open(filename, "w") as f:
+            json.dump(users, f, ensure_ascii=False, indent=2)
+
+    def load_from_json(self, filename):
+        with open(filename, "r") as f:
+            users = json.load(f)
+            for user_data in users:
+                user = User(user_data["name"], user_data["age"], user_data["city"])
+                self.add_user(user)
+
+
+manager = UserManager()
+manager.add_user(User("Андрей", 25, "Тверь"))
+manager.add_user(User("Мария", 30, "Москва"))
+manager.show_all_users()
+manager.save_to_json(users)
+
+result = manager.find_user("Мария")
+if result:
+    print(result.show_info())
+else:
+    print("Пользователь не найден.")

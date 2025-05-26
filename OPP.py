@@ -1102,34 +1102,111 @@ from car.electro_car import ElectroCar
 # gr1.dump_to_json()
 
 
-import requests
-import json
+# import requests
+# import json
+#
+#
+# response = requests.get("https://jsonplaceholder.typicode.com/todos")
+# todos = json.loads(response.text)
+# # print(todos)
+#
+# todos_by_user = {}
+#
+# for todo in todos:
+#     if todo['completed']:
+#         try:
+#             todos_by_user[todo["userId"]] += 1
+#         except KeyError:
+#             todos_by_user[todo["userId"]] = 1
+#
+# # print(todos_by_user)
+#
+# top_user = sorted(todos_by_user.items(), key=lambda x: x[1], reverse=True)[0]
+# print(top_user)
+#
+# users = []
+# for user, num_complete in top_user:
+#     if num_complete < top_user:
+#         break
+#     users.append(user)
+#
+#
+# print(users)
+
+import csv
+
+# with open('data.csv', 'r') as f:
+#     file_reader = csv.reader(f)
+#     count = 0
+#     for row in file_reader:
+#         if count == 0:
+#             print(f"Файл содержит столбцы: {', '.join(row)}")
+#         else:
+#             print(f"\t{row[0]} - {row[1]}. Родился в {row[2]} году.")
+#         count += 1
+
+# with open('data.csv', 'r') as f:
+#     fields = ["Имя", "Профессия", "Год рождения"]
+#     file_reader = csv.DictReader(f, fieldnames=fields)
+#     count = 0
+#     for row in file_reader:
+#         if count == 0:
+#             print(f"Файл содержит столбцы: {', '.join(row)}")
+#         print(f"\t{row["Имя"]} - {row["Профессия"]}. Родился в {row["Год рождения"]} году.")
+#         count += 1
+
+# with open('students.csv', 'w') as f:
+#     writer = csv.writer(f, lineterminator='\r')
+#     writer.writerow(["Имя", "Класс", "Возраст"])
+#     writer.writerow(["Маша", "10", "15"])
+#     writer.writerow(["Люда", "11", "17"])
 
 
-response = requests.get("https://jsonplaceholder.typicode.com/todos")
-todos = json.loads(response.text)
-# print(todos)
+# data = [['hostname', 'vendor', 'model', 'location'],
+#         ['sw1', 'Cisco', '3750', 'London, Best str'],
+#         ['sw2', 'Cisco', '3850', 'Liverpool, Better str'],
+#         ['sw3', 'Cisco', '3650', 'Liverpool, Better str'],
+#         ['sw4', 'Cisco', '3650', 'London, Best str']]
+#
+# with open('switches.csv', 'w') as f:
+#     writer = csv.writer(f, lineterminator='\r')
+#     writer.writerows(data)
+#
+# with open('switches.csv', 'r') as f:
+#     print(f.read())
 
-todos_by_user = {}
-
-for todo in todos:
-    if todo['completed']:
-        try:
-            todos_by_user[todo["userId"]] += 1
-        except KeyError:
-            todos_by_user[todo["userId"]] = 1
-
-# print(todos_by_user)
-
-top_user = sorted(todos_by_user.items(), key=lambda x: x[1], reverse=True)[0]
-print(top_user)
-
-users = []
-for user, num_complete in top_user:
-    if num_complete < top_user:
-        break
-    users.append(user)
+# with open('sw_dict.csv', 'w') as f:
+#     writer = csv.DictWriter(f, fieldnames=["hostname", "vendor", "model", "location"], lineterminator='\r')
+#     writer.writeheader()
+#     writer.writerow({"hostname": "sw1", "vendor": "Cisco", "model": "3750", "location": "London, Best str"})
+#     writer.writerow({"hostname": "sw2", "vendor": "Cisco", "model": "3850", "location": "Liverpool, Better str"})
+#     writer.writerow({"hostname": "sw3", "vendor": "Cisco", "model": "3650", "location": "Liverpool, Better str"})
 
 
-print(users)
+data = [{
+    'hostname': 'sw1',
+    'location': 'London',
+    'model': '3750',
+    'vendor': 'Cisco'
+}, {
+    'hostname': 'sw2',
+    'location': 'Liverpool',
+    'model': '3850',
+    'vendor': 'Cisco'
+}, {
+    'hostname': 'sw3',
+    'location': 'Liverpool',
+    'model': '3650',
+    'vendor': 'Cisco'
+}, {
+    'hostname': 'sw4',
+    'location': 'London',
+    'model': '3650',
+    'vendor': 'Cisco'
+}]
 
+with open('sw_dict_2.csv', 'w') as f:
+    writer = csv.DictWriter(f, fieldnames=data[0].keys(), lineterminator='\r')
+    writer.writeheader()
+    for row in data:
+        writer.writerow(row)
