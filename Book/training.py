@@ -25,7 +25,7 @@
 #
 # guest.clear()
 # print(guest)
-from OPP import users
+# from OPP import users
 # guests = ['Anton', 'Robert', 'Ivan', 'Petr']
 # for guest in guests:
 #     print(f"Hi, {guest}!")
@@ -1178,3 +1178,5 @@ if result:
     print(result.show_info())
 else:
     print("Пользователь не найден.")
+
+

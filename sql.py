@@ -34,22 +34,40 @@ import sqlite3
     # """)
 
 
-with sqlite3.connect('db_3.db') as com:
-    cur = com.cursor()
-    cur.execute("""
-    select *
-    from T1
-    limit 2, 6
-    """)
+# with sqlite3.connect('db_3.db') as com:
+#     cur = com.cursor()
+#     cur.execute("""
+#     select *
+#     from T1
+#     limit 2, 6
+#     """)
+#
+#     # for res in cur:
+#     #     print(res)
+#
+#     # res = cur.fetchall()
+#     # print(res)
+#
+#     res = cur.fetchone()
+#     print(res)
+#
+#     res2 = cur.fetchmany(3)
+#     print(res2)
 
-    # for res in cur:
-    #     print(res)
+# with sqlite3.connect('car.db') as com:
+#     cur = com.cursor()
+#     cur.execute("""
+#     CREATE TABLE IF NOT EXISTS cars(
+#         car_id INTEGER PRIMARY KEY AUTOINCREMENT,
+#         model TEXT,
+#         price INTEGER
+#     )""")
+#
+#     cur.execute("INSERT INTO cars VALUES(1, 'Renault', 22000")
+#     cur.execute("INSERT INTO cars VALUES(2, 'AUDI', 20000")
+#     cur.execute("INSERT INTO cars VALUES(3, 'VAZ', 19000")
+#     cur.execute("INSERT INTO cars VALUES(4, 'BMW', 34000")
 
-    # res = cur.fetchall()
-    # print(res)
 
-    res = cur.fetchone()
-    print(res)
 
-    res2 = cur.fetchmany(3)
-    print(res2)
+"""hgdfgffd"""
