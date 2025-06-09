@@ -1,0 +1,22 @@
+
+body {
+    font-weight: bold;
+}
+.red {
+    color: red;
+}
+.orange {
+    color: orange;
+}
+.green {
+    color: green;
+}
+.blue {
+    color: rgb(47, 146, 217);
+}
+.violet {
+    color: blueviolet;
+}
+.black {
+    color: black;
+}
