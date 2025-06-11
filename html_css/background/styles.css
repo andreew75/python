@@ -1,0 +1,21 @@
+body {
+    /* background-color: black;
+    background-image: url(fon.png);
+    background-repeat: no-repeat;
+    background-position: 50px 100px;
+    padding-left: 40px; */
+    background: black url(leo.png) no-repeat 50px 100px;
+    color: white;
+}
+p {
+    background-color: #526b21;
+}
+a {
+    color: darkgrey;
+}
+a:link {
+    color: chocolate;
+}
+a:hover {
+    color: chocolate;
+}
