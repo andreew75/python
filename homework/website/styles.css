@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0px;
+}
+.wrap{
+    max-width: 1050px;
+    min-width: 414px;
+    margin: 0 auto;
+}
+/* top */
+.top{
+    background: #f3f3f3;
+    margin: 0px;
+}
+.top_block__left{
+    margin: 0px;
+    color: rgb(37, 43, 66);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0.1px;
+}
+.top_block__right{
+    margin: 0px;
+    display: flex;
+    list-style: none;
+}
+.top_block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 36px 0;
+}
+.top_block__right a{
+    color: rgb(115, 115, 115);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+}
+.top_block__right li{
+    padding-left: 21px;
+}
+.top_title{
+    color: rgb(37, 43, 66);
+    font-size: 58px;
+    font-weight: 800;
+    line-height: 80px;
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+.top_text{
+    color: rgb(115, 115, 115);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+
+/* Buttons */
+}
+.top_container{
+    padding: 120px 0px 120px 0px;
+}
+.top_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+}
+.top_btn_get{
+    width: 187px;
+    height: 48px;
+    border-radius: 37px;
+    background: rgb(255, 166, 43);
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 45px;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.top_btn_more{
+    width: 157px;
+    height: 48px;
+    margin: 0px 16px;
+    box-sizing: border-box;
+    border: 1px solid rgb(0, 160, 193);
+    border-radius: 37px;
+    color: rgb(0, 160, 193);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 45px;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    text-align: center;
+}
