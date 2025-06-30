@@ -1,0 +1,64 @@
+.field{
+    height: 100px;
+    width: 100%;
+    background-color: green;
+    position: fixed;
+    top: 350px;
+    z-index: -1;
+}
+.ball{
+    animation: ball 3s infinite;
+}
+img{
+    animation: img 3s infinite linear;
+}
+@keyframes ball {
+    0% {
+        margin-top: 3px;
+        transition-timing-function: cubic-bezier;
+        transform:rotate(10deg);
+    }
+    20% {
+        margin-top: 300px;
+        margin-left: 200px;
+        transform: scaleY(0.7);
+        transition-timing-function: cubic-bezier;
+    }
+    40% {
+        margin-top: 100px;
+        margin-left: 400px;
+        transform: scaleY(1);
+        transition-timing-function: cubic-bezier;
+    }
+    60% {
+        margin-top: 300px;
+        margin-left: 600px;
+        transform: scaleY(0.7);
+        transition-timing-function: cubic-bezier;
+    }
+    80% {
+        margin-top: 230px;
+        margin-left: 750px;
+        transform: scaleY(1);
+        transition-timing-function: cubic-bezier;
+    }
+    90% {
+        margin-top: 300px;
+        margin-left: 850px;
+        transform: scaleY(0.9);
+        transition-timing-function: cubic-bezier;
+    }
+    100% {
+        margin-top: 300px;
+        margin-left: 900px;
+        transition-timing-function: ease;
+    }
+}
+@keyframes img {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
