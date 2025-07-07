@@ -1,0 +1,11 @@
+button{
+    background-color: brown;
+    color: white;
+    height: 40px;
+    width: 100px;
+    border-color: none;
+    border-radius: 4px;
+}
+textarea{
+    width: 100%;
+}

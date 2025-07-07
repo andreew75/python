@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0px;
+}
+.wrap{
+    max-width: 1050px;
+    min-width: 414px;
+    margin: 0 auto;
+}
+/* top */
+.top{
+    background: #f3f3f3;
+    margin: 0px;
+}
+.top_block__left{
+    margin: 0px;
+    color: rgb(37, 43, 66);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0.1px;
+}
+.top_block__right{
+    margin: 0px;
+    display: flex;
+    list-style: none;
+}
+.top_block{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 36px 0;
+}
+.top_block__right a{
+    color: rgb(115, 115, 115);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+}
+.top_block__right li{
+    padding-left: 21px;
+}
+.top_title{
+    color: rgb(37, 43, 66);
+    font-size: 58px;
+    font-weight: 800;
+    line-height: 80px;
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+.top_text{
+    color: rgb(115, 115, 115);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+
+/* Buttons */
+}
+.top_container{
+    padding: 120px 0px 120px 0px;
+}
+.top_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+}
+.top_btn_get{
+    width: 187px;
+    height: 48px;
+    border-radius: 37px;
+    background: rgb(255, 166, 43);
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 45px;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.top_btn_more{
+    width: 157px;
+    height: 48px;
+    margin: 0px 16px;
+    box-sizing: border-box;
+    border: 1px solid rgb(0, 160, 193);
+    border-radius: 37px;
+    color: rgb(0, 160, 193);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 45px;
+    letter-spacing: 0.2px;
+    text-decoration: none;
+    text-align: center;
+}
+/*section choose*/
+.choose{
+    padding: 0 0 100px;
+}
+.choose h2{
+/* h2 */
+    color: rgb(37, 43, 66);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 57px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    padding: 0 0 10px;
+}
+.choose_title_text{
+/* paragraph */
+    color: rgb(115, 115, 115);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    margin: 0 0 45px;
+
+}
+.choose_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.choose_item{
+    flex-basis: 328px;
+    box-sizing: border-box;
+    border: 1px solid rgb(232, 232, 232);
+    background: rgb(255, 255, 255);
+    padding: 35px 40px;
+}
+.choose_title{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.choose_title h5{
+/* h5 */
+    color: rgb(37, 43, 66);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    margin: 0 0 0 15px;
+}
+.choose_title p{
+/* paragraph */
+    color: rgb(115, 115, 115);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    margin: 0;
+}
+/* meet */
+.meet{
+    padding: 80px 0px;
+}
+.meet h2{
+    color: rgb(37, 43, 66);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 57px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    margin: 0 0 10px;
+}
+.meet p{
+    color: rgb(115, 115, 115);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    margin: 0 0 80px;
+}
+
+.meet_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.meet_item{
+    margin-bottom: 30px;
+    text-align: center;
+}
+.meet_item h5{
+    color: rgb(37, 43, 66);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    text-align: center;
+    margin: 30px 0 5px;
+}
+.meet_item h6{
+    color: rgb(115, 115, 115);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    margin: 0 0 5px;
+}
+.icons img{
+    padding: 0 7px 0 7px;
+}
+.meet_item > img{
+    width: 100%;
+}
+/*   Clients */
+.clients{
+    padding: 80px 0px;
+}
+.clients_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.clients h2{
+    color: rgb(37, 43, 66);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 57px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    margin: 0 0 0 10px;
+}
+.clients p{
+    color: rgb(115, 115, 115);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    margin: 0 0 80px;
+}
+.clients_item{
+    flex-basis: 328px;
+    box-sizing: border-box;
+    border: 1px solid rgb(232, 232, 232);
+    background: rgb(255, 255, 255);
+    padding: 35px 40px;
+}
+.clients_item h6{
+    color: rgb(115, 115, 115);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    text-align: left;
+    margin: 20px 0 20px 0;
+}
+.person a{
+    text-decoration: none;
+    color: rgb(255, 166, 43);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    text-align: left;
+}
+.person h6{
+    color: rgb(37, 43, 66);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    text-align: left;
+    margin: 0;
+}
+.client{
+    display: flex;
+}
+.person{
+    padding: 0 0 0 20px;
+}
+/* Contact */
+.contact{
+    padding: 80px 0px;
+    background: url(images/b_5_fon.jpg) center;
+    background-size: cover;
+}
+.contact h2{
+    color: rgb(37, 43, 66);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 57px;
+    letter-spacing: 0.2px;
+    text-align: left;
+    margin: 0 0 40px;
+}
+.contact h5{
+    color: rgb(37, 43, 66);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    text-align: left;
+    margin: 0px;
+}
+.form{
+    max-width: 620px;
+    display: flex;
+    flex-wrap: wrap;
+}
+input, select{
+    flex-basis: 290px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+textarea{
+    flex-basis: 100%;
+    margin-right: 20px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 5px;
+    background: rgb(249, 249, 249);
+    color: rgb(189, 189, 189);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    height: 150px;
+    margin-bottom: 40px;
+}
+input{
+    box-sizing: border-box;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 5px;
+    background: rgb(249, 249, 249);
+    color: rgb(189, 189, 189);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    padding: 10px 20px;
+}
+select{
+    box-sizing: border-box;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 5px;
+    background: rgb(249, 249, 249);
+    color: rgb(189, 189, 189);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    padding: 10px 20px;
+}
+button{
+    border-radius: 5px;
+    border: none;
+    background: rgb(255, 166, 43);
+    color: rgb(255, 255, 255);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    padding: 10px 40px 10px 40px;
+    cursor: pointer;
+}
+/* Consulting */
+.consulting{
+    padding: 20px 0px;
+}
+.consult_title h3{
+    color: rgb(37, 43, 66);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0.1px;
+    text-align: left;
+    margin: 10px 0;
+}
+.consult_title p{
+    color: rgb(115, 115, 115);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    text-align: left;
+    margin: 10px 0;
+}
+.consult{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.consult_button{
+    margin: 32px 0;
+}
+.consult_button a{
+    border-radius: 5px;
+    background: rgb(255, 166, 43);
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.2px;
+    text-align: center;
+    padding: 15px 40px 15px 40px;
+}
+/* Footer*/
+.footer{
+    position: absolute;
+    width: 100%;
+    height: 142px;
+    background: rgb(37, 43, 66);
+}
+.footer_logo h3{
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: 0.1px;
+    text-align: left;
+}
+.social_icons{
+    display: flex;
+    align-items: center;
+    padding: 25px 0;
+}
+.social_icons img{
+    padding: 0 7px;
+}
+.footer_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 34px 0 0 0;
+}
+
+@media (max-width: 1150px){
+    .wrap{
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+    .clients_container, .meet_container, .choose_container{
+        justify-content: space-evenly;
+    }
+}
+@media (max-width: 768px){
+    .choose_item, .meet_item, .clients_item{
+        flex-basis: 100%;
+    }
+    .top_title{
+        font-size: 42px;
+    }
+    br{
+        display: none;
+    }
+    input, select, textarea{
+        flex-basis: 100%;
+    }
+    button{
+        margin: 0 auto;
+    }
+    .consult_button{
+        margin: 20px auto;
+    }
+    .top_block__right{
+        display: table-row;
+    }
+}
