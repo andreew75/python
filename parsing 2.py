@@ -94,10 +94,10 @@ import csv
 #         write_csv(data)
 #
 #
-# def main():
-#     for i in range(2, 50):
-#         url = 'https://ru.wordpress.org/plugins/browse/popular/page/' + str(i) + '/'
-#         (get_jobs(get_html(url)))
+def main():
+    for i in range(2, 50):
+        url = 'https://ru.wordpress.org/plugins/browse/popular/page/' + str(i) + '/'
+        (get_jobs(get_html(url)))
 #
 #
 # if __name__ == '__main__':
